@@ -1,0 +1,44 @@
+.card {
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+.container {
+  display: grid;
+  grid-template-columns: 3fr 5fr 3fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "top top top"
+    "left center right"
+    "bottom bottom bottom";
+}
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #aaa;
+  margin: 0px 50px 50px;
+}
+
+/* Each item in the grid contains numbers */
+.item {
+  /* Center the contents of the grid items. Making each grid item a Flex Container */
+  display: flex;
+
+  /* Horizontal and Vertical centering */
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #87b5ff;
+  border-radius: 3px;
+  font-size: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #1c57b5;
+}
+.zemanim {
+  grid-area: left;
+}
+.tehphilos_g {
+  grid-area: center;
+}

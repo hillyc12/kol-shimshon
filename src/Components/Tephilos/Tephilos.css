@@ -1,0 +1,14 @@
+.tephilos {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 50%;
+  color: black;
+  border-radius: 10%;
+  border-color: darkblue;
+  border-style: ridge;
+  border-width: 10px;
+  height: 5.5rem;
+}
