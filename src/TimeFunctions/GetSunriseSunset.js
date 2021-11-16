@@ -1,6 +1,4 @@
 const zemanimData = async () => {
-  let zemanimForDay = {};
-
   const response = await fetch(
     "https://api.sunrise-sunset.org/json?lat=40.10256&lng=-74.209786&date=2021-11-15"
   );
@@ -50,14 +48,15 @@ const zemanimData = async () => {
       sunriseLocal.getUTCMilliseconds() + Number(halfDay)
     )
   );
-  zemanimForDay = Object.assign({
+  const zemanimForDay = {
     date: tod,
     dawn: alosLocal,
     sunrise: sunriseLocal,
     midday: chattzos,
     sunset: sunsetLocal,
-  });
+  };
   //console.log(`chatzos: ${chattzos}`);
+
   return zemanimForDay;
 };
 export default zemanimData;
