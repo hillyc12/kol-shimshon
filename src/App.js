@@ -5,7 +5,7 @@ import Card from "./Components/UI/Card";
 import ZemanimForDay from "./Components/Zemanim/ZemanimForDay";
 
 const dispDate = new Date();
-console.log(dispDate);
+
 function App() {
   return (
     <Card>
