@@ -28,6 +28,7 @@ const zemanimData = async () => {
 
   const sunriseLocal = new Date(sd.setHours(sd.getHours() - 5));
   const alosLocal = new Date(sd.setMinutes(sd.getMinutes() - 72));
+
   const [shour, smin, sscnd] = sunset.split(":");
   const shour12 = Number(shour) + 12;
 
@@ -36,27 +37,44 @@ const zemanimData = async () => {
   const ss = new Date(year, month, day, shour12, smin, ssecond);
   const sunsetLocal = new Date(ss.setHours(ss.getHours() - 5));
 
-  //console.log(`Netz: ${sunriseLocal}`);
-  //console.log(`Alos: ${alosLocal}`);
-  //console.log(`Shkiah: ${sunsetLocal}`);
-
+  console.log(`Netz: ${sunriseLocal}`);
+  console.log(`Alos: ${alosLocal}`);
+  console.log(`Shkiah: ${sunsetLocal}`);
+  const sunriseStr = ExtractTime(sunriseLocal);
   const timeInDay = sunsetLocal - sunriseLocal;
   const halfDay = Number(timeInDay) / 2;
-
   const chattzos = new Date(
     sunriseLocal.setMilliseconds(
       sunriseLocal.getUTCMilliseconds() + Number(halfDay)
     )
   );
+
+  const alosStrg = ExtractTime(alosLocal);
+
+  const sunsetStr = ExtractTime(sunsetLocal);
+  const chattzosStr = ExtractTime(chattzos);
   const zemanimForDay = {
     date: tod,
-    dawn: alosLocal,
-    sunrise: sunriseLocal,
-    midday: chattzos,
-    sunset: sunsetLocal,
+    dawn: alosStrg,
+    sunrise: sunriseStr,
+    midday: chattzosStr,
+    sunset: sunsetStr,
   };
-  //console.log(`chatzos: ${chattzos}`);
+  console.log(`chatzos: ${chattzos}`);
 
   return zemanimForDay;
+};
+
+const ExtractTime = (date) => {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  let hr = hours;
+  if (hours > 12) {
+    hr = hours - 12;
+  } else {
+    hr = hours;
+  }
+  return `${hr}:${minutes}:${seconds}`;
 };
 export default zemanimData;
