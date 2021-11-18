@@ -1,6 +1,4 @@
 .zemanim {
-  display: column;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }

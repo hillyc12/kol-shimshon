@@ -67,6 +67,7 @@ const zemanimData = async () => {
     earliestMincha: earliestMinchaStr,
     halachikHour: halachikHourStr,
     earliestMariv: earliestMarivStr,
+    sunrisedt: sunrise,
   };
   return zemanimForDay;
 };
