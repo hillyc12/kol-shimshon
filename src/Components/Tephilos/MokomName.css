@@ -1,14 +1,13 @@
-.tephilo_time {
+.mokom_name {
   display: flex;
-  float: right;
-  width: 9.5rem;
+  flex-direction: row;
+  width: 10.5rem;
   height: 2.5rem;
   border: 3px solid #17038d;
   background-color: #b2b5b8;
   color: rgb(14, 2, 2);
   border-radius: 12px;
-  align-items: center;
+  align-items: right;
   justify-content: center;
-
   margin: auto;
 }

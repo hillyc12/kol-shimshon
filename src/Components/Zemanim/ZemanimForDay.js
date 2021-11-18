@@ -1,13 +1,14 @@
 import React from "react";
 import "./ZemanimForDay.css";
-import zemanimData from "../../TimeFunctions/GetSunriseSunset";
 
-const zd = zemanimData();
-console.log(zd);
 const ZemanimForDay = (props) => {
   return (
     <div className="zemanim">
-      <div>עלות: </div>
+      {/*  <div>עלות {props.dawn}</div> */}
+      <div>{props.dawn} : עלות </div>
+      <div>{props.sunrise} : נץ</div>
+      <div>{props.midday} : חצות</div>
+      <div>{props.sunset} : שקיעה </div>
     </div>
   );
 };
