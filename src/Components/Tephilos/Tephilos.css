@@ -11,4 +11,5 @@
   border-style: ridge;
   border-width: 10px;
   height: 5.5rem;
+  position: relative;
 }

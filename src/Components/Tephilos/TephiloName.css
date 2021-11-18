@@ -1,7 +1,7 @@
 .tephilo_name {
   display: flex;
-  flex-direction: column;
-  width: 5.5rem;
+  flex-direction: row;
+  width: 10.5rem;
   height: 2.5rem;
   border: 3px solid #17038d;
   background-color: #b2b5b8;
@@ -9,4 +9,5 @@
   border-radius: 12px;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
