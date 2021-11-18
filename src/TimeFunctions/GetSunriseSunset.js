@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 const zemanimData = async () => {
   const response = await fetch(
     "https://api.sunrise-sunset.org/json?lat=40.10256&lng=-74.209786&date=today&formatted=0"
@@ -13,46 +15,60 @@ const zemanimData = async () => {
   ); */
 
   const zemaniimJson = await response.json();
-  //const zemaniim2Json = await response2.json();
   const sunrise = zemaniimJson.results.sunrise;
   const sunset = zemaniimJson.results.sunset;
-  const sd = new Date(sunrise);
-  const sunriseLocal = new Date(sunrise);
-  const alosLocal = new Date(sd.setMinutes(sd.getMinutes() - 72));
-  const sunsetLocal = new Date(sunset);
+  const sunriseLocal = new DateTime.fromISO(sunrise, {
+    zone: "America/New_York",
+  });
+  const alosLocall = new DateTime.fromISO(sunrise, {
+    zone: "America/New_York",
+  }).plus({ minutes: -72 });
 
-  const sunriseStr = ExtractTime(sunriseLocal);
-  const timeInDay = sunsetLocal - sunriseLocal;
-  const halfDay = Number(timeInDay) / 2;
-  const chattzos = new Date(
-    sunriseLocal.setMilliseconds(
-      sunriseLocal.getUTCMilliseconds() + Number(halfDay)
-    )
-  );
-  const tod = sunriseLocal.getDate();
-  const alosStrg = ExtractTime(alosLocal);
-  const sunsetStr = ExtractTime(sunsetLocal);
-  const chattzosStr = ExtractTime(chattzos);
+  const tod = sunriseLocal.toLocaleString(DateTime.DATE_SHORT);
+  const sunriseStr = sunriseLocal.toLocaleString(DateTime.TIME_SIMPLE);
+  const alosStr = alosLocall.toLocaleString(DateTime.TIME_SIMPLE);
+
+  const sunsetLocal = new DateTime.fromISO(sunset, {
+    zone: "America/New_York",
+  });
+
+  const halfDay = sunsetLocal.diff(sunriseLocal) / 2;
+  const halachikHour = sunsetLocal.diff(sunriseLocal) / 12;
+  const halachikHalfHour =
+    sunsetLocal.diff(sunriseLocal) / 24 > 1800000
+      ? sunsetLocal.diff(sunriseLocal) / 24
+      : 1800000;
+
+  const chattzos = new DateTime.fromISO(sunrise, {
+    zone: "America/New_York",
+  }).plus({ milliseconds: halfDay });
+  const earliestMincha = new DateTime(chattzos).plus({
+    milliseconds: halachikHalfHour,
+  });
+  // findout how many minutes to add to sunset for earliest mariv round up
+  const rndMariv = 5 - (sunsetLocal.minute % 5) + 45;
+
+  const earliestMariv = new DateTime(sunsetLocal).plus({
+    minutes: rndMariv,
+  });
+
+  const earliestMarivStr = earliestMariv.toLocaleString(DateTime.TIME_SIMPLE);
+  const earliestMinchaStr = earliestMincha.toLocaleString(DateTime.TIME_SIMPLE);
+  const halachikHourStr = halachikHour.toLocaleString(DateTime.TIME_SIMPLE);
+  const sunsetStr = sunsetLocal.toLocaleString(DateTime.TIME_SIMPLE);
+  const chattzosStr = chattzos.toLocaleString(DateTime.TIME_SIMPLE);
+
   const zemanimForDay = {
     date: tod,
-    dawn: alosStrg,
+    dawn: alosStr,
     sunrise: sunriseStr,
     midday: chattzosStr,
     sunset: sunsetStr,
+    earliestMincha: earliestMinchaStr,
+    halachikHour: halachikHourStr,
+    earliestMariv: earliestMarivStr,
   };
   return zemanimForDay;
 };
 
-const ExtractTime = (date) => {
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-  let hr = hours;
-  if (hours > 12) {
-    hr = hours - 12;
-  } else {
-    hr = hours;
-  }
-  return `${hr}:${minutes}:${seconds}`;
-};
 export default zemanimData;
