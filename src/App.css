@@ -1,14 +1,15 @@
 .App {
   margin: 0;
   background-color: rgb(177, 167, 167);
+  max-width: min-content;
 }
 body {
-  margin: 0;
+  margin: 5rem;
   background-color: #3f3f3f;
 }
 .App-header {
   background-color: #282c34;
-  min-height: 30vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,9 +24,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
 }
+.main-body {
+  font-size: calc(3px + 2vmin);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -39,4 +44,34 @@ body {
   color: chartreuse;
   align-content: center;
   justify-content: left;
+}
+.container {
+  /* font-size: calc(3px + 2vmin);
+  margin: 0 auto; */
+  display: grid;
+  /* padding: 0 40px;
+  overflow: auto;
+ */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5em 5em 5em;
+  grid-template-areas:
+    "top top top"
+    "left center right"
+    "bottom bottom bottom";
+}
+.header_g {
+  grid-area: top;
+}
+.zemanim_g {
+  grid-area: left;
+  min-width: max-content;
+}
+.tehphilos_g {
+  grid-area: center;
+  max-width: max-content;
+  margin-left: 0;
+  margin-right: 0in;
+}
+.shacharis_g {
+  grid-area: right;
 }

@@ -1,13 +1,10 @@
 .mokom_name {
-  display: flex;
-  flex-direction: row;
   width: 10.5rem;
-  height: 2.5rem;
-  border: 3px solid #17038d;
+  height: 1.5rem;
   background-color: #b2b5b8;
   color: rgb(14, 2, 2);
-  border-radius: 12px;
   align-items: right;
-  justify-content: center;
-  margin: auto;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
