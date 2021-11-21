@@ -1,19 +1,21 @@
 .vasikin {
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 1rem;
-  margin: 2rem auto;
-  width: 50rem;
-  max-width: 50%;
+  display: grid;
+  grid-template-columns: 5fr 10fr;
+
+  margin-left: 3rem;
+
+  max-width: 70%;
+  min-height: max-content;
   color: black;
-  border-radius: 10%;
+  border-radius: 12%;
   border-color: darkblue;
   border-style: ridge;
-  border-width: 10px;
-  height: 5.5rem;
+  border-width: 8px;
+  justify-items: flex-end;
 }
+
 .vasikin_item {
-  padding: 1%;
-  align-items: stretch;
-  justify-content: stretch;
+  min-width: max-content;
+
+  margin-right: 20px;
 }
