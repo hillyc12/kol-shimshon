@@ -1,7 +1,6 @@
 import { DateTime } from "luxon";
 
 const Vasikin = (sunrise) => {
-  console.log(sunrise);
   const brochos = new DateTime.fromISO(sunrise, {
     zone: "America/New_York",
   }).plus({ minutes: -29 });

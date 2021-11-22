@@ -1,9 +1,7 @@
 .vasikin {
   display: grid;
-  grid-template-columns: 5fr 10fr;
-
+  grid-template-columns: 5fr 10fr 1fr;
   margin-left: 3rem;
-
   max-width: 70%;
   min-height: max-content;
   color: black;
@@ -16,6 +14,9 @@
 
 .vasikin_item {
   min-width: max-content;
-
   margin-right: 20px;
+}
+
+.vasikin_name {
+  grid-column: 1, 3;
 }

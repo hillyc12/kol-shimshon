@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import minchaZemanin from "../Components/Zemanim/minchaTimes";
 
 const zemanimData = async () => {
   const response = await fetch(
@@ -69,6 +70,7 @@ const zemanimData = async () => {
     earliestMariv: earliestMarivStr,
     sunrisedt: sunrise,
   };
+  minchaZemanin(earliestMincha, sunsetLocal.plus({ minutes: -15 }));
   return zemanimForDay;
 };
 
