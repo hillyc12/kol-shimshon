@@ -6,6 +6,7 @@ import ZemanimForDay from "./Components/Zemanim/ZemanimForDay";
 import { DateTime } from "luxon";
 import React, { useEffect, useState } from "react";
 import zemanimData from "./TimeFunctions/GetSunriseSunset";
+import MinchaTimes from "./Components/Tephilos/MinchaTimes";
 
 const dtHebrew = DateTime.now()
   .setZone("America/New_York")
@@ -35,23 +36,6 @@ function App() {
           />
         </div>
         <div className="tehphilos_g">
-          {/* <Tephilos
-            time={"6:30 / 6:35"}
-            prayer={"2nd שחרית"}
-            place={"אהל יעקב"}
-          />
-          <Tephilos
-            time={"7:00"}
-            prayer={"3rd שחרית"}
-            place={"Main בית מדרש"}
-          />
-          <Tephilos time={"7:35"} prayer={"4th שחרית"} place={"בית ישראל"} />
-          <Tephilos
-            time={"8:00"}
-            prayer={"5th שחרית"}
-            place={"Main בית מדרש"}
-          />
-          <Tephilos time={"8:30"} prayer={"6th שחרית"} place={"אהל יעקב"} /> */}
           <Tephilos
             time={zd.earliestMincha}
             prayer={"Earliest מנחה"}
@@ -64,6 +48,7 @@ function App() {
           />
         </div>
       </div>
+      <MinchaTimes />
     </div>
   );
 }
