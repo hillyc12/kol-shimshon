@@ -47,14 +47,14 @@ const minchaZemanin = () => {
         .plus({ minutes: 40 })
         .toLocaleString(DateTime.TIME_SIMPLE)
         .substring(0, 4),
-      place: "אהל יעקב",
+      place: "Main בית מדרש",
     },
     {
       time: todayDtLocal
         .plus({ hours: 14 })
         .toLocaleString(DateTime.TIME_SIMPLE)
         .substring(0, 4),
-      place: "Main בית מדרש",
+      place: "אהל יעקב",
     },
     {
       time: todayDtLocal
