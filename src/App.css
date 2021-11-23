@@ -9,7 +9,7 @@ body {
 }
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,14 +46,12 @@ body {
   justify-content: left;
 }
 .container {
-  /* font-size: calc(3px + 2vmin);
-  margin: 0 auto; */
+  font-size: calc(3px + 2vmin);
+
   display: grid;
-  /* padding: 0 40px;
-  overflow: auto;
- */
+
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 5em 5em 5em;
+  grid-template-rows: 1em 5em 5em;
   grid-template-areas:
     "top top top"
     "left center right"
@@ -63,6 +61,13 @@ body {
   grid-area: top;
 }
 .zemanim_g {
+  padding: 0.5rem;
+  grid-area: right;
+  min-width: max-content;
+}
+.ezemanim_g {
+  padding: 1rem;
+
   grid-area: left;
   min-width: max-content;
 }
@@ -73,5 +78,8 @@ body {
   margin-right: 0in;
 }
 .shacharis_g {
-  grid-area: right;
+  grid-area: center;
+}
+.mincha_g {
+  grid-area: center;
 }

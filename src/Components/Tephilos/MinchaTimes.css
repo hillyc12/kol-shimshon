@@ -1,4 +1,5 @@
 .mincha {
+  margin-left: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
@@ -6,19 +7,24 @@
   max-height: fit-content;
   color: black;
   border-radius: 12%;
-  border-color: #19008bc5;
+  border-color: #d8cfffc5;
   border-style: ridge;
   border-width: 8px;
 }
 .mincha_name {
+  margin-left: 3rem;
   color: black;
   border-radius: 12%;
   border-color: darkblue;
   border-style: ridge;
   border-width: 8px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  align-content: center;
   justify-content: center;
+}
+.mincha_item {
+  min-width: max-content;
+  margin-right: 20px;
 }
