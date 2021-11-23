@@ -24,8 +24,9 @@ function App() {
       <h2 className="App-header2 header_g "> {dtHebrew.toLocaleString()} </h2>
       <div className="container ">
         <div className="shacharis_g">
-          {" "}
-          <Shacharis sunrise={zd.sunrisedt} />{" "}
+          <Shacharis sunrise={zd.sunrisedt} />
+
+          <MinchaTimes />
         </div>
         <div className="zemanim_g ">
           <ZemanimForDay
@@ -35,7 +36,7 @@ function App() {
             sunset={zd.sunset}
           />
         </div>
-        <div className="tehphilos_g">
+        <div className="ezemanim_g">
           <Tephilos
             time={zd.earliestMincha}
             prayer={"Earliest מנחה"}
@@ -48,7 +49,7 @@ function App() {
           />
         </div>
       </div>
-      <MinchaTimes />
+      <div className="shacharis_g"></div>
     </div>
   );
 }

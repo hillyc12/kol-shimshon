@@ -18,5 +18,8 @@
 }
 
 .vasikin_name {
-  grid-column: 1, 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

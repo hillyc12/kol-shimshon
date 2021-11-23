@@ -7,10 +7,7 @@ const Shacharis = (props) => {
 
   return (
     <div>
-      <div className="vasikin shachris_g">
-        <div> </div>
-        <h2 className="vasikin_name">שחרית</h2>
-      </div>
+      <h1 className="vasikin vasikin_name">שחרית</h1>
       <div className="vasikin shachris_g">
         <div className="vaikin_item"></div>
         <h3 className="vasikin_item">ותיקין </h3>

@@ -8,7 +8,7 @@ const MinchaTimes = () => {
   const mt2 = mt.map((e) => (
     <>
       {" "}
-      <div> {e.place} </div> <div> {e.time} </div>{" "}
+      <div className="mincha_item"> {e.place} </div> <div> {e.time} </div>{" "}
     </>
   ));
 
