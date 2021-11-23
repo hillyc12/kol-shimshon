@@ -3,22 +3,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
-  max-width: 300px;
+  max-width: 70%;
   max-height: fit-content;
-  color: black;
-  border-radius: 12%;
-  border-color: #d8cfffc5;
-  border-style: ridge;
-  border-width: 8px;
-}
-.mincha_name {
-  margin-left: 3rem;
   color: black;
   border-radius: 12%;
   border-color: darkblue;
   border-style: ridge;
   border-width: 8px;
-  width: 300px;
+}
+
+.mincha_name {
+  margin-left: 3rem;
+  color: black;
+  border-radius: 25%;
+  border-color: darkblue;
+  border-style: ridge;
+  border-width: 8px;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
