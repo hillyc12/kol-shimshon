@@ -9,6 +9,7 @@ body {
 }
 .App-header {
   background-color: #282c34;
+  width: 85vmax;
   min-height: 15vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ body {
 }
 .App-header2 {
   background-color: #282c34;
+  width: 85vmax;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -29,6 +31,7 @@ body {
 }
 .main-body {
   font-size: calc(3px + 2vmin);
+  width: 85vmax;
 }
 
 @keyframes App-logo-spin {

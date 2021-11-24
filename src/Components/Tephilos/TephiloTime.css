@@ -1,10 +1,7 @@
 .tephilo_time {
-  width: 8.5rem;
-  height: 1.5rem;
-  background-color: #b2b5b8;
   color: rgb(14, 2, 2);
   align-items: right;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 10;
 }
